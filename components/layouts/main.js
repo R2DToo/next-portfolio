@@ -1,0 +1,28 @@
+import Head from "next/head";
+import { Box, Container } from "@chakra-ui/react";
+import Navbar from "../navbar";
+
+const Main = ({ children, router }) => {
+  return (
+    <Box as="main" pb={8}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Braden Still-Routley Development Homepage"
+        />
+        <meta name="author" content="Braden Still-Routley" />
+        <meta name="author" content="R2DToo" />
+        <title>Still-Routley Development</title>
+      </Head>
+
+      <Navbar path={router.asPath} />
+
+      <Container maxW="container.md" pt={14}>
+        {children}
+      </Container>
+    </Box>
+  );
+};
+
+export default Main;
